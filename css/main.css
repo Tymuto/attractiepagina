@@ -177,8 +177,13 @@ th{
     text-align: left;
 }
 
+tr:nth-child(even){
+  background-color: #a0c9fc;
+}
 
-
+tr:nth-child(odd){
+  background-color: #d7eaff;
+}
 
 
 /* ==========================================================================

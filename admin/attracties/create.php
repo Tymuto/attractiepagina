@@ -38,6 +38,10 @@ if(!isset($_SESSION['user_id']))
                 <input type="text" name="title" id="title" class="form-input">
             </div>
             <div class="form-group">
+                <label for="description">Beschrijving:</label>
+                <textarea name="description" id="description" class="form-input"></textarea>
+            </div>
+            <div class="form-group">
                 <label for="themeland">Themagebied:</label>
                 <select name="themeland" id="themeland" class="form-input">
                     <option value=""> - kies een optie - </option>
@@ -45,6 +49,10 @@ if(!isset($_SESSION['user_id']))
                     <option value="waterland">Waterland</option>
                     <option value="adventureland">Adventureland</option>
                 </select>
+            </div>
+            <div class="form-group">
+                <label for="min_length">Minimale lengte:</label>
+                <input type="number" name="min_length" id="min_length" class="form-input">
             </div>
             <div class="form-group">
                 <label for="img_file">Afbeelding:</label>

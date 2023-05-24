@@ -39,7 +39,7 @@ if(!isset($_SESSION['user_id']))
         $ride = $statement->fetch(PDO::FETCH_ASSOC);
         ?>
 
-        <form action="../backend/ridesController.php" method="POST">
+        <form action="../backend/ridesController.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="action" value="update">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <input type="hidden" name="old_img" value="<?php echo $ride['img_file']; ?>">
@@ -49,6 +49,10 @@ if(!isset($_SESSION['user_id']))
                 <input type="text" name="title" id="title" class="form-input" value="<?php echo $ride['title']; ?>">
             </div>
             <div class="form-group">
+                <label for="description">Beschrijving:</label>
+                <textarea name="description" id="description" class="form-input" value="<?php echo $ride['description']; ?>"></textarea>
+            </div>
+            <div class="form-group">
                 <label for="themeland">Themagebied:</label>
                 <select name="themeland" id="themeland" class="form-input">
                     <option value=""> - kies een optie - </option>
@@ -56,6 +60,10 @@ if(!isset($_SESSION['user_id']))
                     <option value="waterland" <?php if($ride['themeland'] == 'waterland') echo 'selected'; ?>>Waterland</option>
                     <option value="adventureland" <?php if($ride['themeland'] == 'adventureland') echo 'selected'; ?>>Adventureland</option>
                 </select>
+            </div>
+            <div class="form-group">
+                <label for="min_length">Minimale lengte:</label>
+                <input type="number" name="min_length" id="min_length" class="form-input" value="<?php echo $ride['min_length']; ?>">
             </div>
             <div class="form-group">
                 <label for="img_file">Afbeelding:</label>
